@@ -19,5 +19,7 @@ namespace AplicationCore.Entity
         public string Numero { get; set; }
 
         public int MembroId { get; set; }
+
+        public Membro Membro { get; set; }
     }
 }

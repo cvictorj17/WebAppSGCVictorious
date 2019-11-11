@@ -34,7 +34,11 @@ namespace AplicationCore.Entity
 
         public string Cidade { get; set; }
 
+        public string UF { get; set; }
+
         public string CEP { get; set; }
+
+        public ICollection<MembroTelefone> Telefones { get; set; }
     }
 
 }
