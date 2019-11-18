@@ -11,8 +11,8 @@ using System;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ContextVictorious))]
-    [Migration("20191111200927_Configuracoes")]
-    partial class Configuracoes
+    [Migration("20191118200119_teste")]
+    partial class teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,7 +63,8 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Cidade")
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Complemento");
+                    b.Property<string>("Complemento")
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("Logradouro")
                         .HasColumnType("varchar(200)");
@@ -78,7 +79,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("UF")
-                        .HasColumnType("char(3)");
+                        .HasColumnType("varchar(3)");
 
                     b.HasKey("MembroId");
 

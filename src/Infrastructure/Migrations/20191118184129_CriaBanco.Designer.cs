@@ -11,8 +11,8 @@ using System;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ContextVictorious))]
-    [Migration("20191111193414_ChaveEstrangeira")]
-    partial class ChaveEstrangeira
+    [Migration("20191118184129_CriaBanco")]
+    partial class CriaBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,9 +26,13 @@ namespace Infrastructure.Migrations
                     b.Property<int>("CargoId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descricao");
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("CargoId");
 
@@ -40,27 +44,42 @@ namespace Infrastructure.Migrations
                     b.Property<int>("MembroId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bairro");
+                    b.Property<string>("Bairro")
+                        .HasColumnType("varchar(30)");
 
-                    b.Property<string>("CEP");
+                    b.Property<string>("CEP")
+                        .HasColumnType("varchar(10)");
 
-                    b.Property<string>("CNH");
+                    b.Property<string>("CNH")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
 
-                    b.Property<string>("CPF");
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("varchar(11)");
 
                     b.Property<int?>("CargoId");
 
-                    b.Property<string>("Cidade");
+                    b.Property<string>("Cidade")
+                        .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Complemento");
+                    b.Property<string>("Complemento")
+                        .HasColumnType("varchar(20)");
 
-                    b.Property<string>("Logradouro");
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("varchar(200)");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(60)");
 
                     b.Property<string>("Numero");
 
-                    b.Property<string>("Profissao");
+                    b.Property<string>("Profissao")
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("UF")
+                        .HasColumnType("varchar(3)");
 
                     b.HasKey("MembroId");
 
@@ -74,9 +93,13 @@ namespace Infrastructure.Migrations
 
                     b.Property<int>("MembroId");
 
-                    b.Property<string>("Numero");
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
 
-                    b.Property<string>("TipoTelefone");
+                    b.Property<string>("TipoTelefone")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
 
                     b.HasKey("MembroTelefoneId");
 

@@ -38,6 +38,8 @@ namespace AplicationCore.Entity
 
         public string CEP { get; set; }
 
+        public Cargo Cargo { get; set; }
+
         public ICollection<MembroTelefone> Telefones { get; set; }
     }
 

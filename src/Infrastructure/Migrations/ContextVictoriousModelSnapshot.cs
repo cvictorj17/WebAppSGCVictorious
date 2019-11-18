@@ -62,7 +62,8 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Cidade")
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Complemento");
+                    b.Property<string>("Complemento")
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("Logradouro")
                         .HasColumnType("varchar(200)");
@@ -76,7 +77,8 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Profissao")
                         .HasColumnType("varchar(30)");
 
-                    b.Property<string>("UF");
+                    b.Property<string>("UF")
+                        .HasColumnType("varchar(3)");
 
                     b.HasKey("MembroId");
 
